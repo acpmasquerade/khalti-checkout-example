@@ -1,0 +1,132 @@
+<html>
+
+<head>
+    <script src="https://khalti.com/static/khalti-checkout.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class='jumbotron' style='background:purple; color:white;'>
+            <div class='row'>
+                <div class='col-sm-6'>
+                    <h1>Pay with Khalti</h1>
+                    <p>This is a sample example of Khalti checkout integration. The server side logic is written in PHP</p>
+                </div>
+                <div class='col-sm-6 text-center'>
+                    <img src="logo.png" height=100/>
+                </div>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class="col-sm-2">
+                ==============>
+                <h2>Available products</h2>
+                ==============>
+            </div>
+            <div class='col-sm-3'>
+                <div class="card" style="width: 17rem;">
+                    <img class="card-img-top" src="macbook.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">15inch Macbook Pro</h4>
+                        <p class="card-text">
+                            <strong>Costs - 10$ </strong>
+                            <br /> Some quick example text to build on the card title and make up the bulk of the card's
+                            content.
+                        </p>
+                        <a href="#" data-amount=10 id='payment-button-1' class="btn btn-primary pay-khalti">Pay with Khalti</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 17rem;">
+                    <img class="card-img-top" src="macbook.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">17inch Macbook Pro</h4>
+                        <p class="card-text">
+                            <strong>Costs - 20$ </strong>
+                            <br /> Some quick example text to build on the card title and make up the bulk of the card's
+                            content.
+                        </p>
+                        <a href="#" data-amount=20 id='payment-button-2' class="btn btn-primary pay-khalti">Pay with Khalti</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 17rem;">
+                    <img class="card-img-top" src="macbook.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">19inch Macbook Pro</h4>
+                        <p class="card-text">
+                            <strong>Costs - 30$ </strong>
+                            <br /> Some quick example text to build on the card title and make up the bulk of the card's
+                            content.
+                        </p>
+                        <a href="#" data-amount=30 id='payment-button-3' class="btn btn-primary pay-khalti">Pay with Khalti</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class='col-sm-12'>
+                <div style='background:black;color:white;padding:1em;'>
+                    <strong>Debug Console</strong>
+                    <br />
+                    <div id='alert-content'>
+                        Hey, Click the payment buttons and check the response here !
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class='col-sm-12'>
+                <hr />
+                <h4 class="card-title">Checkout Integration</h4>
+                <p class="card-text">
+                    <strong>Basic Example</strong>
+                    <pre class="prettyprint linenums"><code id="js-example-here" class="language-javascript"></code></pre>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class='col-sm-12'>
+                <p class="card-text">
+                    <strong>Current Example</strong>
+                    <pre class="prettyprint linenums"><code id="js-code-here" class="language-javascript"></code></pre>
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+</body>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="khalti-client.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://rawgit.com/google/code-prettify/master/styles/sons-of-obsidian.css" />
+<script type="text/javascript">
+    $(function(){
+        // just show the live js here.
+        $.ajax({url: "khalti-client.js", success: function(resp){
+            $("#js-code-here").text(resp.trim());
+            addEventListener('load', function(event) { PR.prettyPrint(); }, false);
+        }, dataType: 'html'});
+        $.get({url: "example.js", success: function(resp){
+            $("#js-example-here").text(resp.trim());
+            addEventListener('load', function(event) { PR.prettyPrint(); }, false);
+        }, dataType: 'html'});
+    });
+</script>
+</html>
