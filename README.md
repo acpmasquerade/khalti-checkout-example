@@ -1,4 +1,4 @@
-#KhaltiCheckout Implementation
+# KhaltiCheckout Implementation
 ## Working Example
 
 1. Run the code in a PHP webserver, 
