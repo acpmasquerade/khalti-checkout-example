@@ -7,3 +7,6 @@
 
 contact khalti.com for any assistance required
 
+
+Screenshot
+![Screenshot](khalti-example.png "Screenshot")
